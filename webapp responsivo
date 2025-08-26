@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Conselhos Leitura & Esportes</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      margin: 0;
+      background: #fff3e0;
+    }
+    .card {
+      background: #fff;
+      padding: 25px;
+      border-radius: 12px;
+      max-width: 450px;
+      width: 90%;
+      text-align: center;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    }
+    h1 {
+      color: #ff7043;
+    }
+    #conselho {
+      margin: 20px 0;
+      font-size: 1.2rem;
+      min-height: 60px;
+    }
+    button {
+      background: #ff7043;
+      color: white;
+      border: none;
+      padding: 12px 20px;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #ff4343;
+      transition: 0.5s;
+    }
+    @media(max-width:600px){
+      #conselho{font-size:1rem;}
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <h1>💡 Dicas de Receitas caseiras</h1>
+    <div id="conselho">Clique no botão para descobrir uma receita!</div>
+    <button id="novo">Nova Receita</button>
+  </div>
+
+  <script>
+    // Array de conselhos em português
+    const conselhos = [
+      "Prepare um bolo de chocolate fofinho para alegrar seu dia.",
+    "Cozinhe uma lasanha de carne e queijo para o jantar da família.",
+    "Experimente fazer pão caseiro fresquinho no café da manhã.",
+    "Faça um risoto cremoso de frango para impressionar seus amigos.",
+    "Prepare panquecas recheadas para um brunch delicioso.",
+    "Cozinhe uma sopa de legumes nutritiva para aquecer o corpo.",
+    "Faça brownies de chocolate para adoçar a tarde.",
+    "Experimente uma pizza caseira com seus ingredientes favoritos.",
+    "Prepare muffins de banana para um lanche rápido e saudável.",
+    "Cozinhe macarrão à carbonara para uma refeição prática e saborosa."
+    ];
+
+    const btn = document.getElementById('novo');
+    const conselho = document.getElementById('conselho');
+
+    // Função para gerar conselho aleatório
+    btn.addEventListener('click', () => {
+      const aleatorio = Math.floor(Math.random() * conselhos.length);
+      conselho.textContent = conselhos[aleatorio];
+    });
+  </script>
+</body>
+</html>
